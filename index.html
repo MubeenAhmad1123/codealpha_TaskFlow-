@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+
+  </head>
+  <body>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">TaskFlow</div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <svg class="sun" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 17.5C15.0376 17.5 17.5 15.0376 17.5 12C17.5 8.96243 15.0376 6.5 12 6.5C8.96243 6.5 6.5 8.96243 6.5 12C6.5 15.0376 8.96243 17.5 12 17.5Z"
+              />
+              <path
+                d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"
+              />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="app-grid">
+          <div class="tasks-section">
+            <div class="section-tabs">
+              <button class="tab-btn active" data-section="today">Today</button>
+              <button class="tab-btn" data-section="week">This Week</button>
+            </div>
+
+            <div class="task-input-section">
+              <form class="task-input-form" id="taskForm">
+                <input
+                  type="text"
+                  class="task-input"
+                  id="taskInput"
+                  placeholder="What needs to be done?"
+                  required
+                />
+                <button type="submit" class="add-btn">Add Task</button>
+              </form>
+            </div>
+
+            <div class="status-tabs" id="statusTabs">
+              <button class="status-tab active" data-status="todo">
+                To Do <span class="count">0</span>
+              </button>
+              <button class="status-tab" data-status="completed">
+                Completed <span class="count">0</span>
+              </button>
+              <button class="status-tab" data-status="wont-do">
+                Won't Do <span class="count">0</span>
+              </button>
+              <button class="status-tab" data-status="trash">
+                Trash <span class="count">0</span>
+              </button>
+            </div>
+
+            <div class="task-list" id="taskList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📝</div>
+                <div>No tasks yet. Add one above!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar">
+            <div class="pomodoro-timer">
+              <h3>Pomodoro Timer</h3>
+              <div class="timer-display">
+                <div class="timer-circle" id="timerCircle">
+                  <div class="timer-time" id="timerTime">25:00</div>
+                </div>
+              </div>
+              <div class="timer-session" id="timerSession">Work Session</div>
+              <div class="timer-controls">
+                <button class="timer-btn start" id="startBtn">Start</button>
+                <button
+                  class="timer-btn pause"
+                  id="pauseBtn"
+                  style="display: none"
+                >
+                  Pause
+                </button>
+                <button class="timer-btn reset" id="resetBtn">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="scoreDisplay" class="score-box"></div>
+<div id="weeklyAverage" class="score-box"></div>
+<canvas id="scoreChart" width="400" height="150"></canvas>
+
+<div id="scoreContainer" class="score-box">
+  🔥 Productivity Score: <span id="productivityScore">0 / 10 😞</span>
+</div>
+<footer>
+  <div> <p>&copy; 2024 TaskFlow. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+      A Todo List App Made by Mubeen With ❤️ and  ☕
+    </p>
+  </div>
+</footer>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
